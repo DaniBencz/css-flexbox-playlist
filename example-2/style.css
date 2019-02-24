@@ -1,30 +1,30 @@
-*{
+* {
   font-family: verdana;
   margin: 0;
 }
 
-body{
+body {
   background: #eee;
 }
 
-.wrapper{
+.wrapper {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
 }
 
-/* menu base styles */
+/* = = = menu base styles = = = */
 
-nav{
+nav {
   background: #333;
 }
 
-nav ul{
+nav ul {
   list-style-type: none;
   padding: 0;
 }
 
-nav a{
+nav a {
   text-decoration: none;
   text-align: center;
   color: #fff;
@@ -32,23 +32,60 @@ nav a{
   padding: 10px;
 }
 
-nav a:hover{
+nav a:hover {
   background-color: #555;
 }
 
-/* social menu base styles */
+/* = = = social menu base styles = = = */
 
-/* flex styles */
+a.tw {
+  background: url(img/tw.png) no-repeat center;
+  background-size: 80%;
+}
 
-@media screen and (min-width: 768px){
+a.fb {
+  background: url(img/fb.png) no-repeat center;
+  background-size: 80%;
+}
 
-nav ul{
+.social {
+  /*this removes text below icons*/
+  text-indent: -10000px;
+  max-width: 80px;
+  /*this centralises icons for stacked view(small csreens)*/
+  margin: 0 auto;
+}
+
+/* = = = flex styles = = = */
+
+nav ul.social {
+  /*this allows 'social' icons to grow to the available space*/
+  flex: 1 1 0;
+  /*this to set 'social' icons next to eachother in stacked view*/
   display: flex;
 }
 
-nav li{
+nav ul.social li {
+  /*this to allow 'social' icons to take up available space in stacked view*/
   flex: 1 1 0;
 }
-    
-} /* end media 768 */
 
+@media screen and (min-width: 768px) {
+  nav ul {
+    display: flex;
+  }
+  nav li {
+    flex: 1 1 0;
+  }
+  /*this to handle 'social' elements*/
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  /*this to set 'social' icons to right*/
+  .social {
+    margin: 0;
+  }
+}
+
+/* end media 768 */
